@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>dom</title>
+	<script src="dom.js"></script>
+</head>
+
+<body>
+	<h1>dom - Demo</h1>
+	<form>
+		<label>Email</label>
+		<div>
+			<input type="text" class="field" name="name" id="name" value="janderson@clemar.com.br">
+			<textarea name="" id="" cols="30" rows="3"></textarea>
+		</div>
+		<button type="button">Enviar</button>
+	</form>
+	<form>
+		<label>Email</label>
+		<div>
+			<input type="text" class="field" name="name" id="name" value="janderson@clemar.com.br">
+			<input type="text" class="field" name="email" id="email" value="janderson@clemar.com.br">
+		</div>
+		<button type="button">Enviar</button>
+		<button type="button">Enviar</button>
+	</form>
+</body>
+
+<script>
+	dom('form')[0].get('input').css({ color: 'blue' }).on('focus', e => {
+		e.target.css({ color: 'red' })
+	});
+	dom('button').on('click', e => console.log(e));
+</script>
+
+<style>
+	label {
+		font-weight: 600;
+	}
+
+	div {
+		display: inline-flex;
+		flex-direction: column;
+		margin: 8px 0;
+	}
+</style>
+
+</html>
